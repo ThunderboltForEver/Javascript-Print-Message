@@ -19,8 +19,9 @@ h1 {
 }
 @media ( max-width: 767px ) {
     h1 {
-        font-size: 25px;
+        font-size: 22px;
         text-align: center;
+        margin: 0 10px;
     }
 }
 .printMessage {
@@ -33,7 +34,7 @@ h1 {
 }
 @media ( max-width: 500px ) {
     .printMessage {
-        width: 100%;
+        width: 94%;
     }
 }
 .printMessage input {
