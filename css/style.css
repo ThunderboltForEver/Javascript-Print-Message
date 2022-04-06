@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec;
+    
+}
+h1 {
+    position: absolute;
+    top: 20px;
+    color: #444;
+}
+@media ( max-width: 767px ) {
+    h1 {
+        font-size: 25px;
+        text-align: center;
+    }
+}
+.printMessage {
+    width: 400px;
+    background-color: #ccc;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media ( max-width: 500px ) {
+    .printMessage {
+        width: 100%;
+    }
+}
+.printMessage input {
+    padding: 15px;
+}
+.printMessage input[ type = "text" ] {
+    outline: none;
+    border: none;
+    padding: 20px;
+    font-size: 1rem;
+}
+.printMessage input[ type = "text" ]::placeholder {
+    color: #bbb;
+}
+.printMessage input[ type = "text" ]:focus::placeholder {
+    opacity: 0;
+}
+.printMessage button {
+    cursor: pointer;
+    background-color: #0d7d8b;
+    color: white;
+    padding: 17px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid rgb(199, 96, 27);
+}
