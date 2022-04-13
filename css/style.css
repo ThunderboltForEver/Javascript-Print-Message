@@ -5,54 +5,65 @@
 }
 
 body {
-    min-height: 100vh;
+    background-color: #ececec;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ececec;
-    
+
 }
-h1 {
-    position: absolute;
-    top: 20px;
-    color: #444;
+
+.container {
+    width: 400px;
+    position: relative;
+
 }
-@media ( max-width: 767px ) {
-    h1 {
-        font-size: 22px;
-        text-align: center;
-        margin: 0 10px;
+
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
     }
 }
-.printMessage {
-    width: 400px;
+
+#printMessage {
+    width: 100%;
+    position: absolute;
+    top: 0;
     background-color: #ccc;
     padding: 15px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-@media ( max-width: 500px ) {
-    .printMessage {
-        width: 94%;
+
+@media (max-width: 767px) {
+    #printMessage {
+        width: 100%;
+        margin: 0 auto;
     }
 }
-.printMessage input {
+
+#printMessage input {
     padding: 15px;
+
 }
-.printMessage input[ type = "text" ] {
+
+#printMessage input[ type="text"] {
     outline: none;
     border: none;
     padding: 20px;
     font-size: 1rem;
 }
-.printMessage input[ type = "text" ]::placeholder {
+
+#printMessage input[ type="text"]::placeholder {
     color: #bbb;
 }
-.printMessage input[ type = "text" ]:focus::placeholder {
+
+#printMessage input[ type="text"]:focus::placeholder {
     opacity: 0;
 }
-.printMessage button {
+
+#printMessage button {
     cursor: pointer;
     background-color: #0d7d8b;
     color: white;
@@ -60,4 +71,37 @@ h1 {
     font-weight: 700;
     font-size: 1rem;
     border: 1px solid rgb(199, 96, 27);
+}
+
+#Message {
+    position: absolute;
+    top: 180px;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    #Message {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+#Message span {
+    display: block;
+    margin: 4px 0;
+    word-wrap: break-word;
+    padding: 14px;
+    background-color: #0d7d8b;
+    color: white;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+#Message span:hover {
+    box-shadow: 0 0 6px 0 #222;
+}
+#Message span.active {
+    background-color: crimson;
 }

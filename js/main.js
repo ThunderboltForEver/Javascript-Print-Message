@@ -1,23 +1,31 @@
-let getValueInput , changeColor ;
+let getValueInput  , takeInput = document.getElementById("inputText") , i = 0,takeWhole = document.querySelector("#printMessage") ;
+
+
 
 document.getElementById("buttonItem").onclick = function () {
+    let createSpan = document.createElement("span");
+    let takeDiv = document.getElementById("Message");
+    getValueInput = takeInput.value;
 
-    getValueInput = document.getElementById("inputText").value;
-    if ( getValueInput === "" || getValueInput === " ") {
-     document.getElementById("spanItem").style = "color:red;";
-     document.querySelector(".printMessage").style = "box-shadow: 0 0 4px 0px red;";
-     document.getElementById("spanItem").innerHTML = "Enter a value , please ";
+    if ( i > 0) {
+        let getSpan = takeDiv.querySelectorAll("span");
+        getSpan.forEach((span) => {
+             span.removeAttribute("class");
+        })
+    }
+    if ( getValueInput === "" || getValueInput.startsWith(" ") ) {
+        takeWhole.style = "box-shadow: 0 0 4px 0px red;";
     }
     else {
-        document.querySelector(".printMessage").style = "box-shadow: 0;";
-        document.getElementById("spanItem").style = "color:black;";
-         document.getElementById("spanItem").innerHTML = getValueInput; }
-    
+        let takeValue = document.createTextNode(getValueInput);
+        createSpan.appendChild(takeValue);
+        takeDiv.appendChild(createSpan);
+        createSpan.setAttribute("class","active");
+        i++;
+        takeWhole.style = "box-shadow: 0 ;";
+         }
     }
 
-    document.getElementById("inputText").onfocus = function () {
-
-            document.getElementById("spanItem").innerHTML = "";
-            document.querySelector(".printMessage").style = "box-shadow: 0;";
-            
-  }
+    takeInput.oninput = function () {
+        takeWhole.style = "box-shadow: 0 ;";
+    }
