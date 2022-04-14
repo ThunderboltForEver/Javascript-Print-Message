@@ -23,7 +23,9 @@ document.getElementById("buttonItem").onclick = function () {
         createSpan.setAttribute("class","active");
         i++;
         takeWhole.style = "box-shadow: 0 ;";
+        
          }
+         takeInput.value = "";
     }
 
     takeInput.oninput = function () {
